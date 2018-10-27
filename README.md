@@ -33,7 +33,7 @@ Our other open source repositories can be found here...
 ### Where can I get it?
 You can download the package for this project from any of the following package managers...
 
-- **NUGET** - [https://www.nuget.org/packages/Ministry.FluentGuard](https://www.nuget.org/packages/Ministry.FluentGuard)
+- **NUGET** - [https://www.nuget.org/packages/Ministry.String](https://www.nuget.org/packages/Ministry.String)
 
 ### Contribution guidelines
 If you would like to contribute to the project, please contact me.
