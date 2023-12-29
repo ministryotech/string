@@ -23,8 +23,7 @@ And to collections...
 - **List** - Converts an IEnumerable of strings or KeyValuePairs into a single, line terminator delimited list.
 
 ## The Ministry of Technology Open Source Products
-Welcome to The Ministry of Technology open source products. All open source Ministry of Technology products are distributed under the MIT License for maximum re-usability. Details on more of our products and services can be found on our website at http://www.minotech.co.uk
-
+Welcome to The Ministry of Technology open source products. All open source Ministry of Technology products are distributed under the MIT License for maximum re-usability.
 Our other open source repositories can be found here...
 
 * [https://github.com/ministryotech](https://github.com/ministryotech)

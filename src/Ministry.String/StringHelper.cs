@@ -1,26 +1,19 @@
-﻿// Copyright (c) 2018 Minotech Ltd.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files
-// (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, 
-// publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do 
-// so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
-// FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
-// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 
-
-// ReSharper disable once CheckNamespace
 namespace Ministry
 {
+    /// <summary>
+    /// Extension method helper for string functions.
+    /// </summary>
+    [SuppressMessage("ReSharper", "UnusedType.Global", Justification = "Library")]
+    [SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Library")]
+    [SuppressMessage("ReSharper", "MemberCanBePrivate.Global", Justification = "Library")]
+    [SuppressMessage("ReSharper", "UnusedMethodReturnValue.Global")]
     public static class StringHelper
     {
         /// <summary>
@@ -51,12 +44,12 @@ namespace Ministry
         }
 
         /// <summary>
-        /// Appends a value to the StringBuilder if it is currently empty.
+        /// Appends a value to the <see cref="StringBuilder"/> if it is currently empty.
         /// </summary>
-        /// <param name="value">The stringbuilder to append to.</param>
+        /// <param name="value">The <see cref="StringBuilder"/> to append to.</param>
         /// <param name="appendValue">The value to append.</param>
         /// <returns>The completed builder.</returns>
-        /// <exception cref="System.ArgumentNullException">Either the StringBuilder or value to append are null.</exception>
+        /// <exception cref="ArgumentNullException">Either the <see cref="StringBuilder"/> or value to append are null.</exception>
         public static StringBuilder AppendIfEmpty(this StringBuilder value, string appendValue)
         {
             if (value.ThrowIfNull(nameof(value)).Length == 0) value.Append(appendValue.ThrowIfNull(nameof(appendValue)));
@@ -64,12 +57,12 @@ namespace Ministry
         }
 
         /// <summary>
-        /// Appends a value to the StringBuilder if it is not currently empty.
+        /// Appends a value to the <see cref="StringBuilder"/> if it is not currently empty.
         /// </summary>
-        /// <param name="value">The stringbuilder to append to.</param>
+        /// <param name="value">The <see cref="StringBuilder"/> to append to.</param>
         /// <param name="appendValue">The value to append.</param>
         /// <returns>The completed builder.</returns>
-        /// <exception cref="ArgumentNullException">Either the StringBuilder or value to append are null.</exception>
+        /// <exception cref="ArgumentNullException">Either the <see cref="StringBuilder"/> or value to append are null.</exception>
         public static StringBuilder AppendIfNotEmpty(this StringBuilder value, string appendValue)
         {
             if (value.ThrowIfNull(nameof(value)).Length > 0) value.Append(appendValue.ThrowIfNull(nameof(appendValue)));
@@ -77,12 +70,12 @@ namespace Ministry
         }
 
         /// <summary>
-        /// Appends a line terminator after a value to the StringBuilder if it is currently empty.
+        /// Appends a line terminator after a value to the <see cref="StringBuilder"/> if it is currently empty.
         /// </summary>
-        /// <param name="value">The stringbuilder to append to.</param>
+        /// <param name="value">The <see cref="StringBuilder"/> to append to.</param>
         /// <param name="appendValue">The value to append.</param>
         /// <returns>The completed builder.</returns>
-        /// <exception cref="ArgumentNullException">Either the StringBuilder or value to append are null.</exception>
+        /// <exception cref="ArgumentNullException">Either the <see cref="StringBuilder"/> or value to append are null.</exception>
         public static StringBuilder AppendLineIfEmpty(this StringBuilder value, string appendValue)
         {
             if (value.ThrowIfNull(nameof(value)).Length == 0) value.AppendLine(appendValue.ThrowIfNull(nameof(appendValue)));
@@ -90,12 +83,12 @@ namespace Ministry
         }
 
         /// <summary>
-        /// Appends line terminator after a value to the StringBuilder if it is not currently empty.
+        /// Appends line terminator after a value to the <see cref="StringBuilder"/> if it is not currently empty.
         /// </summary>
-        /// <param name="value">The stringbuilder to append to.</param>
+        /// <param name="value">The <see cref="StringBuilder"/> to append to.</param>
         /// <param name="appendValue">The value to append.</param>
         /// <returns>The completed builder.</returns>
-        /// <exception cref="ArgumentNullException">Either the StringBuilder or value to append are null.</exception>
+        /// <exception cref="ArgumentNullException">Either the <see cref="StringBuilder"/> or value to append are null.</exception>
         public static StringBuilder AppendLineIfNotEmpty(this StringBuilder value, string appendValue)
         {
             if (value.ThrowIfNull(nameof(value)).Length > 0) value.AppendLine(appendValue.ThrowIfNull(nameof(appendValue)));
@@ -103,11 +96,11 @@ namespace Ministry
         }
 
         /// <summary>
-        /// Appends a line terminator to the StringBuilder if it is currently empty.
+        /// Appends a line terminator to the <see cref="StringBuilder"/> if it is currently empty.
         /// </summary>
-        /// <param name="value">The stringbuilder to append to.</param>
+        /// <param name="value">The <see cref="StringBuilder"/> to append to.</param>
         /// <returns>The completed builder.</returns>
-        /// <exception cref="ArgumentNullException">Either the StringBuilder or value to append are null.</exception>
+        /// <exception cref="ArgumentNullException">Either the <see cref="StringBuilder"/> or value to append are null.</exception>
         public static StringBuilder AppendLineIfEmpty(this StringBuilder value)
         {
             if (value.ThrowIfNull(nameof(value)).Length == 0) value.AppendLine();
@@ -115,11 +108,11 @@ namespace Ministry
         }
 
         /// <summary>
-        /// Appends line terminator to the StringBuilder if it is not currently empty.
+        /// Appends line terminator to the <see cref="StringBuilder"/> if it is not currently empty.
         /// </summary>
-        /// <param name="value">The stringbuilder to append to.</param>
+        /// <param name="value">The <see cref="StringBuilder"/> to append to.</param>
         /// <returns>The completed builder.</returns>
-        /// <exception cref="ArgumentNullException">Either the StringBuilder or value to append are null.</exception>
+        /// <exception cref="ArgumentNullException">Either the <see cref="StringBuilder"/> or value to append are null.</exception>
         public static StringBuilder AppendLineIfNotEmpty(this StringBuilder value)
         {
             if (value.ThrowIfNull(nameof(value)).Length > 0) value.AppendLine();
@@ -131,7 +124,7 @@ namespace Ministry
         /// </summary>
         /// <param name="value">The string to evaluate.</param>
         /// <returns>A flag to indicate the result.</returns>
-        /// <remarks>This uses the static String.IsNullOrEmpty method.</remarks>
+        /// <remarks>This uses the static <see cref="String.IsNullOrEmpty"/> method.</remarks>
         public static bool IsNullOrEmpty(this string value) 
             => string.IsNullOrEmpty(value);
 
@@ -140,7 +133,7 @@ namespace Ministry
         /// </summary>
         /// <param name="value">The string to evaluate.</param>
         /// <returns>A flag to indicate the result.</returns>
-        /// <remarks>This uses the static String.IsNullOrEmpty method.</remarks>
+        /// <remarks>This uses the static <see cref="String.IsNullOrEmpty"/> method.</remarks>
         public static bool IsNotNullOrEmpty(this string value) 
             => !value.IsNullOrEmpty();
 
@@ -161,7 +154,7 @@ namespace Ministry
         }
 
         /// <summary>
-        /// Removes a set number of characters from the end of a StringBuilder.
+        /// Removes a set number of characters from the end of a <see cref="StringBuilder"/>.
         /// </summary>
         /// <param name="value">The StringBuilder to change.</param>
         /// <param name="characterCount">The number of characters to remove.</param>
@@ -195,7 +188,7 @@ namespace Ministry
             => value.ThrowIfNull(nameof(value)).Remove(0, characterCount);
 
         /// <summary>
-        /// Removes a set number of characters from the start of a StringBuilder.
+        /// Removes a set number of characters from the start of a <see cref="StringBuilder"/>.
         /// </summary>
         /// <param name="value">The StringBuilder to change.</param>
         /// <param name="characterCount">The number of characters to remove.</param>
@@ -232,23 +225,23 @@ namespace Ministry
 
             if (value.ThrowIfNull(nameof(value)).Contains(delim))
             {
-                if (!value.Contains("|"))
+                if (!value.Contains('|'))
                 {
                     delim = '|';
                 }
-                else if (!value.Contains("^"))
+                else if (!value.Contains('^'))
                 {
                     delim = '^';
                 }
-                else if (!value.Contains("="))
+                else if (!value.Contains('='))
                 {
                     delim = '=';
                 }
-                else if (!value.Contains("/"))
+                else if (!value.Contains('/'))
                 {
                     delim = '/';
                 }
-                else if (!value.Contains("-"))
+                else if (!value.Contains('-'))
                 {
                     delim = '-';
                 }
@@ -316,7 +309,7 @@ namespace Ministry
         /// <returns>
         /// The delimited string.
         /// </returns>
-        /// <exception cref="System.ArgumentNullException">The Hashtable passed in is null.</exception>
+        /// <exception cref="ArgumentNullException">The Hashtable passed in is null.</exception>
         public static string Delimit(this IDictionary col, string delimiter = ", ", bool excludeKeys = false, string keyValueSeparator = ": ")
         {
             var builder = new StringBuilder();
